@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Openingsuren Secretariaat - Het CVO</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Montserrat:wght@500;700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Realistic brick background pattern using CSS gradients */
+    .brick-wall {
+      background-color: #3b2c26;
+      background-image: 
+        linear-gradient(335deg, rgba(0,0,0,0.4) 0%, transparent 50%),
+        linear-gradient(155deg, rgba(255,255,255,0.05) 0%, transparent 50%),
+        linear-gradient(90deg, #241915 2px, transparent 2px),
+        linear-gradient(0deg, #241915 2px, transparent 2px);
+      background-size: 100% 100%, 100% 100%, 80px 40px, 80px 40px;
+    }
+
+    /* Actual photo-like brick pattern layer */
+    .brick-texture {
+      background: 
+        radial-gradient(circle at 50% 50%, rgba(139, 69, 19, 0.2), rgba(0,0,0,0.7)),
+        repeating-linear-gradient(
+          0deg,
+          #322520,
+          #322520 28px,
+          #1e1613 28px,
+          #1e1613 32px
+        );
+      position: relative;
+    }
+
+    .brick-rows {
+      background-image: 
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 76px,
+          #1e1613 76px,
+          #1e1613 80px
+        );
+      background-size: 80px 64px;
+    }
+
+    /* Screws with metallic finish */
+    .screw {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #ffffff 0%, #d1d5db 40%, #6b7280 85%, #374151 100%);
+      box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.4), inset -1px -1px 2px rgba(0,0,0,0.5);
+      position: absolute;
+      z-index: 10;
+    }
+
+    .screw::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 8px;
+      height: 2px;
+      background-color: #4b5563;
+      transform: translate(-50%, -50%) rotate(35deg);
+      box-shadow: inset 0 1px 1px rgba(0,0,0,0.6);
+    }
+
+    /* Taped overlay badge for WOENSDAG */
+    .taped-badge {
+      position: relative;
+      background-color: #e5e9e0;
+      padding: 2px 14px;
+      border-radius: 1px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+      display: inline-block;
+    }
+
+    /* Translucent scotch tape style */
+    .taped-badge::before, .taped-badge::after {
+      content: '';
+      position: absolute;
+      top: -3px;
+      bottom: -3px;
+      width: 16px;
+      background: rgba(255, 255, 255, 0.55);
+      border-left: 1px dashed rgba(200, 200, 200, 0.5);
+      border-right: 1px dashed rgba(200, 200, 200, 0.5);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      backdrop-filter: blur(0.5px);
+    }
+
+    .taped-badge::before {
+      left: -8px;
+      transform: rotate(-3deg);
+    }
+
+    .taped-badge::after {
+      right: -8px;
+      transform: rotate(2deg);
+    }
+
+    /* Custom handwriting for Friday */
+    .handwritten-text {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #1e293b;
+      letter-spacing: 1px;
+      transform: rotate(-1.5deg);
+      display: inline-block;
+    }
+  </style>
+</head>
+<body class="bg-stone-900 min-h-screen flex items-center justify-center p-4 sm:p-8 brick-texture">
+
+  <!-- Signboard Box Container -->
+  <div class="relative w-full max-w-[480px] bg-[#dce4d8] text-[#1c2920] rounded-sm p-8 sm:p-10 shadow-2xl transition-all duration-300 my-auto">
+    
+    <!-- Metallic Corner Screws -->
+    <div class="screw top-3 left-3"></div>
+    <div class="screw top-3 right-3"></div>
+    <div class="screw bottom-3 left-3"></div>
+    <div class="screw bottom-3 right-3"></div>
+
+    <!-- Logo Header Area -->
+    <div class="flex items-center justify-center gap-3 mb-8">
+      
+      <!-- Main Logo Badge (Green Box) -->
+      <div class="bg-[#8cc63f] text-white p-3 rounded-2xl w-44 shadow-sm flex flex-col justify-between">
+        <div class="leading-none tracking-tight font-black text-2xl flex items-baseline">
+          <span class="text-3xl font-extrabold italic tracking-tighter">hét cvo</span>
+          <span class="text-xs font-bold ml-0.5 opacity-90">.be</span>
+        </div>
+        <div class="text-[7px] font-bold tracking-wider leading-tight mt-4 uppercase">
+          Volwassenenonderwijs<br>de Vlaamse Ardennen
+        </div>
+      </div>
+
+      <!-- Filmstrip / Secondary Logo Badge -->
+      <div class="bg-[#8cc63f] text-white p-2.5 rounded-2xl w-24 h-full flex flex-col justify-between items-center text-center shadow-sm">
+        <div class="text-[6px] font-bold tracking-widest uppercase border-b border-white/30 pb-0.5 w-full">
+          Avelgem - Harelbeke
+        </div>
+        
+        <!-- Filmstrip icon graphic -->
+        <div class="my-2 flex gap-1 items-center justify-center">
+          <div class="w-2 h-2 rounded-full bg-white opacity-80"></div>
+          <div class="w-2 h-2 rounded-full bg-white opacity-80"></div>
+        </div>
+
+        <div class="text-sm font-black italic tracking-tighter">
+          CVO
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Title Section -->
+    <div class="text-center mb-8">
+      <h1 class="text-2xl sm:text-3xl font-black tracking-wide text-[#1c2920] leading-tight">
+        OPENINGSUREN
+      </h1>
+      <h2 class="text-xl sm:text-2xl font-extrabold tracking-wide text-[#1c2920] mt-0.5">
+        SECRETARIAAT
+      </h2>
+    </div>
+
+    <!-- Schedule Grid -->
+    <div class="space-y-5 text-sm sm:text-base font-bold text-[#1c2920] px-2 sm:px-4 mb-10">
+      
+      <!-- MAANDAG -->
+      <div class="flex justify-between items-center">
+        <span class="tracking-wider">MAANDAG</span>
+        <span class="font-bold tracking-tight">18.00 - 20.00</span>
+      </div>
+
+      <!-- DINSDAG -->
+      <div class="flex justify-between items-center">
+        <span class="tracking-wider">DINSDAG</span>
+        <span class="font-bold tracking-tight">18.00 - 20.00</span>
+      </div>
+
+      <!-- WOENSDAG -->
+      <div class="flex justify-between items-center">
+        <span class="tracking-wider">WOENSDAG</span>
+        <div>
+          <div class="taped-badge">
+            <span class="text-xs sm:text-sm font-extrabold tracking-wider text-gray-800">GESLOTEN</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DONDERDAG -->
+      <div class="flex justify-between items-center">
+        <span class="tracking-wider">DONDERDAG</span>
+        <span class="font-bold tracking-tight">18.00 - 20.00</span>
+      </div>
+
+      <!-- VRIJDAG -->
+      <div class="flex justify-between items-center">
+        <span class="tracking-wider">VRIJDAG</span>
+        <div class="pr-2">
+          <span class="handwritten-text">GESLOTEN</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer Links & Info -->
+    <div class="text-center text-xs font-semibold space-y-1 text-[#2d3e33] pt-2 border-t border-black/5">
+      <p class="hover:underline cursor-pointer">
+        <a href="mailto:info@hetcvo.be">info@hetcvo.be</a>
+      </p>
+      <p class="hover:underline cursor-pointer">
+        <a href="https://www.hetcvo.be" target="_blank" rel="noopener">www.hetcvo.be</a>
+      </p>
+      <p class="hover:underline cursor-pointer">
+        <a href="https://www.facebook.com/hetcvo" target="_blank" rel="noopener">www.facebook.com/hetcvo</a>
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
